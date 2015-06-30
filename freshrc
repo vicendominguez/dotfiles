@@ -14,3 +14,8 @@ fresh config/\* --file
 # Vim
 fresh vim/vimrc --file
 fresh vim/vim --file=~/.vim/
+
+# fresh hook
+fresh_after_build(){
+  vim +NeoBundleInstall +qall
+}
