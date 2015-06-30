@@ -1,0 +1,16 @@
+# vim: set ft=sh:
+
+fresh freshshell/fresh bin/fresh --bin
+
+#prompt
+fresh nojhan/liquidprompt liquidprompt
+
+# Some shell aliases
+fresh shell/aliases.sh
+
+# Config files
+fresh config/\* --file
+
+# Vim
+fresh vim/vimrc --file
+fresh vim/vim --file=~/.vim/
