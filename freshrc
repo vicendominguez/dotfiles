@@ -6,7 +6,7 @@ fresh freshshell/fresh bin/fresh --bin
 fresh nojhan/liquidprompt liquidprompt
 
 # Some shell aliases
-fresh shell/aliases.sh
+fresh shell/alias.sh
 
 # Config files
 fresh config/\* --file
