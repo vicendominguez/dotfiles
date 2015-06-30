@@ -15,7 +15,14 @@ fresh config/\* --file
 fresh vim/vimrc --file
 fresh vim/vim --file=~/.vim/
 
+install_vim_bundle(){
+  mkdir -p ~/.vim/bundle
+  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  vim +NeoBundleInstall +qall
+}
+
+
 # fresh hook
 fresh_after_build(){
-  vim +NeoBundleInstall +qall
+  install_vim_bundle
 }
