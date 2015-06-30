@@ -8,12 +8,15 @@ fresh nojhan/liquidprompt liquidprompt
 # Some shell aliases
 fresh shell/alias.sh
 
+
+
 # Config files
 fresh config/\* --file
 
 # Vim
 fresh vim/vimrc --file
 fresh vim/vim --file=~/.vim/
+fresh shell/vim.sh
 
 install_vim_bundle(){
   mkdir -p ~/.vim/bundle
