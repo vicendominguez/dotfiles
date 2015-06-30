@@ -2,7 +2,9 @@ if has('vim_starting')
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim-bundle/'))
+" Required:
+ call neobundle#begin(expand('~/.vim/bundle/'))
+  
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -55,3 +57,4 @@ NeoBundle 'AndrewRadev/splitjoin.vim' " simplifies the transition between multil
 " NeoBundle 'edkolev/tmuxline.vim' " Simple tmux statusline generator
 NeoBundle 'fatih/vim-go' " Go development
 
+call neobundle#end()
