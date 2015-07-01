@@ -7,8 +7,8 @@ fresh nojhan/liquidprompt liquidprompt
 
 # Some shell aliases
 [ "Linux" = "$(uname)" ] && fresh shell/alias-linux.sh
-[ "Darwin"= "$(uname)" ] && fresh shell/alias-darwin.sh
-[ "FreeBSD"= "$(uname)" ] && fresh shell/alias-fbsd.sh
+[ "Darwin" = "$(uname)" ] && fresh shell/alias-darwin.sh
+[ "FreeBSD" = "$(uname)" ] && fresh shell/alias-fbsd.sh
 
 
 # Config files
