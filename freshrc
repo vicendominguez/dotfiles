@@ -12,7 +12,7 @@ fresh nojhan/liquidprompt liquidprompt
 
 
 # Config files
-[ "Linux" != "$(uname)" ] && fresh config/tmux.conf || fresh config/\* --file
+[ "Linux" = "$(uname)" ] && fresh config/\* --file
 
 # Vim
 fresh vim/vimrc --file
