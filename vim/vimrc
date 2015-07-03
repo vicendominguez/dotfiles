@@ -141,10 +141,10 @@ command W w
 command Q q
 
 " disable arroy keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
