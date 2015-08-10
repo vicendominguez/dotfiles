@@ -263,11 +263,14 @@ let g:go_disable_autoinstall = 1
 set undofile
 set undodir=~/.vim-tmp/undodir
 
+" Integration with vim-airline
+let g:airline#extensions#syntastic#enabled = 1
+
+" testing syntastic with eslint (TEST)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" testing syntastic with eslint (TEST)
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
