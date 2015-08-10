@@ -116,9 +116,6 @@ let my_ctrlp_user_command = "" .
 endif
 let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
 
-map <leader>gg :e Gemfile<cr>
-"map <leader>gr :e config/routes.rb<cr>
-"map <leader>db :e config/database.yml<cr>
 map <leader>f :CtrlP .<cr>
 
 " Edit another file in the same directory as the current file
@@ -128,11 +125,6 @@ map <leader>e :e %%
 map <leader>sp :sp %%
 map <leader>vsp :vsp %%
 
-" easier navigation between split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
 
 " Aliases for some typos
 command WQ wq
@@ -270,3 +262,13 @@ let g:go_disable_autoinstall = 1
 " enable undo history
 set undofile
 set undodir=~/.vim-tmp/undodir
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" testing syntastic with eslint (TEST)
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
