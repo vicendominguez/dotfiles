@@ -186,8 +186,8 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 " let g:airline_section_b = airline#section#create(['hunks', 'branch'])
 " let g:airline_section_c = airline#section#create(['%<', 'file', spc, 'readonly'])
 " let g:airline_section_gutter = airline#section#create(['%='])
-let g:airline_section_x = '' " airline#section#create_right(['tagbar', 'filetype'])
-let g:airline_section_y = '' " airline#section#create_right(['ffenc'])
+" let g:airline_section_x = '' " airline#section#create_right(['tagbar', 'filetype'])
+" let g:airline_section_y = '' " airline#section#create_right(['ffenc'])
 " let g:airline_section_z = airline#section#create(['%3p%%'.spc, 'linenr', ':%3c '])
 " let g:airline_section_warning = airline#section#create(['syntastic', 'eclim', 'whitespace'])
 
@@ -221,7 +221,7 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 " Store notes on Documents by default
-let g:notes_directories = ['~/Documents/Notes']
+" let g:notes_directories = ['~/Documents/Notes']
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
@@ -275,3 +275,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
