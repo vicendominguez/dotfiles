@@ -49,6 +49,7 @@ NeoBundle 'elzr/vim-json' " A better JSON for Vim
 NeoBundle 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 NeoBundle 'AndrewRadev/splitjoin.vim' " simplifies the transition between multiline and single-line code
 NeoBundle 'fatih/vim-go' " Go development
-NeoBundle 'scrooloose/syntastic' " syntastic for display errores in realtime 
+NeoBundle 'scrooloose/syntastic' " syntastic for display errores in realtime
+NeoBundle 'wookiehangover/jshint.vim'
 
 call neobundle#end()
