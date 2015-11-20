@@ -40,7 +40,6 @@ NeoBundle 'mattn/webapi-vim' " vim interface to Web API
 NeoBundle 'vim-scripts/argtextobj.vim' " Text-object like motion for arguments
 NeoBundle 'kana/vim-textobj-user' " Create your own text objects
 NeoBundle 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks.
-NeoBundle 'dougireton/vim-chef' " Vim ftplugin for enabling gf on include_recipe in Chef
 NeoBundle 'junkblocker/patchreview-vim' " doing single, multi-patch or diff code reviews
 NeoBundle 'codegram/vim-codereview' " GitHub Pull Request-based Code Reviews
 NeoBundle 'elzr/vim-json' " A better JSON for Vim
@@ -48,6 +47,6 @@ NeoBundle 'moll/vim-bbye' " Delete buffers and close files in Vim without closin
 NeoBundle 'AndrewRadev/splitjoin.vim' " simplifies the transition between multiline and single-line code
 NeoBundle 'fatih/vim-go' " Go development
 NeoBundle 'scrooloose/syntastic' " syntastic for display errores in realtime
-NeoBundle 'wookiehangover/jshint.vim' " JsHint for javascript
-
+NeoBundle 'wookiehangover/jshint.vim' " JsHint for javascript jshint.com
+NeoBundle 'pearofducks/ansible-vim'  " Ansible syntax
 call neobundle#end()
