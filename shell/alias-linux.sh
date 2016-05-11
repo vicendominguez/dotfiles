@@ -4,4 +4,4 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -lF'
 alias ls='ls --color=auto'
-
+alias myweather='curl -4 http://wttr.in/'
