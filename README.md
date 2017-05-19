@@ -4,13 +4,7 @@ My personal dotfiles
 ## Installation
 
 ``` sh
-FRESH_LOCAL_SOURCE=vicendominguez/dotfiles bash -c "`curl -sL get.freshshell.com`"
-```
-
-OR
-
-```sh
-FRESH_LOCAL_SOURCE=vicendominguez/dotfiles bash -c "`wget -q get.freshshell.com -O -`"
+FRESH_LOCAL_SOURCE=vicendominguez/dotfiles bash <(curl -sL get.freshshell.com)"
 ```
 
 My dotfiles are managed by [fresh].
