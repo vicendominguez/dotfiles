@@ -30,7 +30,6 @@ NeoBundle 'tpope/vim-endwise' " wisely add 'end' in ruby, endfunction/endif/more
 NeoBundle 'tpope/vim-fugitive' " a Git wrapper
 NeoBundle 'plasticboy/vim-markdown' " Markdown Vim Mode
 NeoBundle 'xolox/vim-misc' " Miscellaneous auto-load Vim scripts
-NeoBundle 'xolox/vim-notes' " Easy note taking in Vim
 NeoBundle 'xolox/vim-session' " Extended session management for Vim
 NeoBundle 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the sign-column
 NeoBundle 'mhinz/vim-startify' " A fancy start screen for Vim.
