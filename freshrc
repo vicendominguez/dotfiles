@@ -30,3 +30,5 @@ install_vim_bundle(){
 fresh_after_build(){
   install_vim_bundle
 }
+
+fresh josacar/dotfiles shell/aliases/git.sh
