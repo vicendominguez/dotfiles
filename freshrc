@@ -25,10 +25,19 @@ install_vim_bundle(){
   vim +NeoBundleInstall +qall
 }
 
+install_brew(){
+  if [ "$(uname)" == "Darwin" ] && ! which brew &> /dev/null; then
+    echo 'Installing brew..'
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    cd $HOME
+    brew tap vicendominguez/vicendominguez
+  fi
+}
 
 # fresh hook
 fresh_after_build(){
   install_vim_bundle
+  install_brew
 }
 
 fresh josacar/dotfiles shell/aliases/git.sh
