@@ -5,5 +5,6 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias ls='ls -G'
 alias myweather='curl -4 http://wttr.in/'
+alias valencia='curl -4 http://wttr.in/Valencia,Spain'
 alias temp='sysctl -a |grep tempe'
 
