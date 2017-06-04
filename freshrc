@@ -30,7 +30,8 @@ install_brew(){
     echo 'Installing brew..'
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     cd $HOME
-    brew tap vicendominguez/vicendominguez
+    brew tap homebrew/brewdler
+    brew brewdle
   fi
 }
 
