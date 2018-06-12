@@ -41,4 +41,6 @@ fresh_after_build(){
   install_brew
 }
 
+
+fresh config/\* --file
 fresh josacar/dotfiles shell/aliases/git.sh
