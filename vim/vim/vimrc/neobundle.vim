@@ -35,6 +35,7 @@ NeoBundle 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the 
 NeoBundle 'benmills/vimux' " interact with tmux
 NeoBundle 'mattn/webapi-vim' " vim interface to Web API
 NeoBundle 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks.
+NeoBundle 'kana/vim-textobj-user' " This is a dependency for the above ruby plugin
 NeoBundle 'junkblocker/patchreview-vim' " doing single, multi-patch or diff code reviews
 NeoBundle 'codegram/vim-codereview' " GitHub Pull Request-based Code Reviews
 NeoBundle 'elzr/vim-json' " A better JSON for Vim
