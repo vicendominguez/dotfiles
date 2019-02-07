@@ -32,12 +32,8 @@ NeoBundle 'plasticboy/vim-markdown' " Markdown Vim Mode
 NeoBundle 'xolox/vim-misc' " Miscellaneous auto-load Vim scripts
 NeoBundle 'xolox/vim-session' " Extended session management for Vim
 NeoBundle 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the sign-column
-NeoBundle 'mhinz/vim-startify' " A fancy start screen for Vim.
-NeoBundle 'tpope/vim-surround' " quoting/parenthesizing made simple
 NeoBundle 'benmills/vimux' " interact with tmux
 NeoBundle 'mattn/webapi-vim' " vim interface to Web API
-NeoBundle 'vim-scripts/argtextobj.vim' " Text-object like motion for arguments
-NeoBundle 'kana/vim-textobj-user' " Create your own text objects
 NeoBundle 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks.
 NeoBundle 'junkblocker/patchreview-vim' " doing single, multi-patch or diff code reviews
 NeoBundle 'codegram/vim-codereview' " GitHub Pull Request-based Code Reviews
@@ -46,5 +42,4 @@ NeoBundle 'moll/vim-bbye' " Delete buffers and close files in Vim without closin
 NeoBundle 'AndrewRadev/splitjoin.vim' " simplifies the transition between multiline and single-line code
 NeoBundle 'fatih/vim-go' " Go development
 NeoBundle 'scrooloose/syntastic' " syntastic for display errores in realtime
-NeoBundle 'pearofducks/ansible-vim'  " Ansible syntax
 call neobundle#end()
