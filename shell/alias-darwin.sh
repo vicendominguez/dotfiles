@@ -10,4 +10,5 @@ alias rg='rg --no-ignore --hidden'
 alias oktap='aws-okta exec old_aws_production_super -- '
 alias oktas='aws-okta exec old_aws_staging_super -- '
 alias motherp="aws-okta exec old_aws_production_super -- aws ssm start-session --target i-0855982a811570154"
+alias ssmsesion="aws ssm start-session --target "
 alias jsonlintall='find . -name "*.json" -exec jsonlint -c -q {} \;'
