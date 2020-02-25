@@ -14,7 +14,7 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
 
-set shortmessage-=S               " Search occurrences in the vim status var, example: [2/3]
+set shortmess-=S               " Search occurrences in the vim status var, example: [2/3]
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
