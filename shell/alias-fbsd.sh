@@ -1,6 +1,6 @@
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --colour=auto'
-alias l='ls -CF'
+alias l='ls -Farlt'
 alias la='ls -A'
 alias ll='ls -lF'
 alias ls='ls -G'
