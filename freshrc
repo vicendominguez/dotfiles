@@ -44,3 +44,4 @@ fresh_after_build(){
 
 fresh config/\* --file
 fresh josacar/dotfiles shell/aliases/git.sh
+fresh rupa/z z.sh
