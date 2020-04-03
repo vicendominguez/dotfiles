@@ -18,7 +18,6 @@ NeoBundle 'Shougo/vimproc', {
     \    },
     \ } " Interactive command execution in Vim
 NeoBundle 'mileszs/ack.vim' " Vim plugin for Ack
-NeoBundle 'rking/ag.vim' " VIm plugin for the_silver_searcher
 NeoBundle 'kien/ctrlp.vim' " Full path fuzzy file, buffer, mru, tag, finder for Vim
 NeoBundle 'mattn/gist-vim' " creating gists
 NeoBundle 'scrooloose/nerdtree' " A tree explorer
