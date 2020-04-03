@@ -14,7 +14,7 @@ NeoBundle 'Shougo/vimproc', {
     \     'windows' : 'make -f make_mingw32.mak',
     \     'cygwin' : 'make -f make_cygwin.mak',
     \     'mac' : 'make -f make_mac.mak',
-    \     'unix' : 'make -f make_unix.mak',
+    \     'unix' : 'make -f make_bsd.mak',
     \    },
     \ } " Interactive command execution in Vim
 NeoBundle 'mileszs/ack.vim' " Vim plugin for Ack
