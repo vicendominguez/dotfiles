@@ -11,8 +11,8 @@ fresh nojhan/liquidprompt liquidprompt
 [ "FreeBSD" = "$(uname)" ] && fresh shell/alias-fbsd.sh
 
 
-# Config files
-[ "Linux" = "$(uname)" ] && fresh config/\* --file
+# fzf
+[ "FreeBSD" = "$(uname)" ] && [ $(which fzf) ] && fresh shell/fzf_fbsd_bash_completions.sh
 
 # Vim
 fresh vim/vimrc --file
