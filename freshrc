@@ -11,9 +11,6 @@ fresh freshshell/fresh bin/fresh --bin
 # fzf
 [ "FreeBSD" = "$(uname)" ] && [ $(which fzf) ] && fresh shell/fzf_fbsd_bash_completions.sh
 
-# z
-[ "Darwin" = "$(uname)" ] && fresh shell/z.sh
-
 # Vim
 fresh vim/vimrc --file
 fresh vim/vim --file=~/.vim/
@@ -45,3 +42,7 @@ fresh josacar/dotfiles shell/aliases/git.sh
 
 #prompt
 fresh shell/starship.sh
+
+#zoxide (like z)
+fresh shell/zoxide.sh
+
