@@ -2,9 +2,6 @@
 
 fresh freshshell/fresh bin/fresh --bin
 
-#prompt
-fresh nojhan/liquidprompt liquidprompt
-
 # Some shell aliases
 [ "Linux" = "$(uname)" ] && fresh shell/alias-linux.sh
 [ "Darwin" = "$(uname)" ] && fresh shell/alias-darwin.sh
@@ -29,9 +26,7 @@ install_brew(){
   if [ "$(uname)" == "Darwin" ] && ! which brew &> /dev/null; then
     echo 'Installing brew..'
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    cd $HOME
-    brew tap homebrew/brewdler
-    brew brewdle
+    brew bundle
   fi
 }
 
@@ -41,7 +36,9 @@ fresh_after_build(){
   install_brew
 }
 
-
 fresh config/\* --file
 fresh josacar/dotfiles shell/aliases/git.sh
 fresh rupa/z z.sh
+
+#prompt
+fresh shell/starship.sh

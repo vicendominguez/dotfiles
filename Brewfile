@@ -1,7 +1,5 @@
-tap vicendominguez/vicendominguez
-
 brew 'htop'
-brep 'wget'
+brew 'wget'
 brew 'git'
 brew 'tree'
 brew 'tmux'
