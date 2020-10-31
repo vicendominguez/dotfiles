@@ -4,7 +4,7 @@ endif
 
 " Required:
  call neobundle#begin(expand('~/.vim/bundle/'))
-  
+
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -19,7 +19,6 @@ NeoBundle 'Shougo/vimproc', {
     \ } " Interactive command execution in Vim
 NeoBundle 'mileszs/ack.vim' " Vim plugin for Ack
 NeoBundle 'kien/ctrlp.vim' " Full path fuzzy file, buffer, mru, tag, finder for Vim
-NeoBundle 'mattn/gist-vim' " creating gists
 NeoBundle 'scrooloose/nerdtree' " A tree explorer
 NeoBundle 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
 NeoBundle 'godlygeek/tabular' " text filtering and alignment
@@ -28,15 +27,12 @@ NeoBundle 'tpope/vim-commentary' " comment stuff out
 NeoBundle 'tpope/vim-endwise' " wisely add 'end' in ruby, endfunction/endif/more
 NeoBundle 'tpope/vim-fugitive' " a Git wrapper
 NeoBundle 'plasticboy/vim-markdown' " Markdown Vim Mode
-NeoBundle 'xolox/vim-misc' " Miscellaneous auto-load Vim scripts
-NeoBundle 'xolox/vim-session' " Extended session management for Vim
 NeoBundle 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the sign-column
 NeoBundle 'benmills/vimux' " interact with tmux
 NeoBundle 'mattn/webapi-vim' " vim interface to Web API
 NeoBundle 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks.
 NeoBundle 'kana/vim-textobj-user' " This is a dependency for the above ruby plugin
 NeoBundle 'junkblocker/patchreview-vim' " doing single, multi-patch or diff code reviews
-NeoBundle 'codegram/vim-codereview' " GitHub Pull Request-based Code Reviews
 NeoBundle 'elzr/vim-json' " A better JSON for Vim
 NeoBundle 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 NeoBundle 'AndrewRadev/splitjoin.vim' " simplifies the transition between multiline and single-line code
