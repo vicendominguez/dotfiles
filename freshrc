@@ -7,7 +7,6 @@ fresh freshshell/fresh bin/fresh --bin
 [ "Darwin" = "$(uname)" ] && fresh shell/alias-darwin.sh
 [ "FreeBSD" = "$(uname)" ] && fresh shell/alias-fbsd.sh
 
-
 # fzf
 [ "FreeBSD" = "$(uname)" ] && [ $(which fzf) ] && fresh shell/fzf_fbsd_bash_completions.sh
 
@@ -38,7 +37,6 @@ fresh_after_build(){
 
 fresh config/\* --file
 fresh josacar/dotfiles shell/aliases/git.sh
-#from brew# fresh rupa/z z.sh
 
 #prompt
 fresh shell/starship.sh
@@ -46,3 +44,6 @@ fresh shell/starship.sh
 #zoxide (like z)
 fresh shell/zoxide.sh
 
+#forgit
+fresh wfxr/forgit . --file=forgit/
+fresh shell/forgit.sh
