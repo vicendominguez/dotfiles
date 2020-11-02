@@ -37,8 +37,11 @@ ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 
+[directory]
+style = "bold 69"
+
 [status]
 disabled = false
 
-[directory]
-style = "bold 69"
+[cmd_duration]
+format = "🕒[$duration]($style) "
