@@ -44,4 +44,4 @@ style = "bold 69"
 disabled = false
 
 [cmd_duration]
-format = "🕒[$duration]($style) "
+format = "[$duration]($style) "

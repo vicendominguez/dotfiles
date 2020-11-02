@@ -17,9 +17,9 @@ fresh vim/vim --file=~/.vim/
 fresh shell/vim.sh
 
 install_vim_bundle(){
-  mkdir -p ~/.vim/bundle
-  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-  vim +NeoBundleInstall +qall
+    mkdir -p ~/.vim/bundle
+    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    vim +NeoBundleInstall +qall
 }
 
 install_brew(){
