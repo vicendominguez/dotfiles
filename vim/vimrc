@@ -294,3 +294,6 @@ let g:syntastic_json_checkers = ['jsonlint']
 
 " NerdTree to Control+n
 map <C-n> :NERDTreeToggle<CR>
+
+" writing with sudo to avoud read permissions
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
