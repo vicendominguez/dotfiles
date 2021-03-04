@@ -9,6 +9,7 @@ alias valencia='curl -4 http://wttr.in/Valencia,Spain'
 alias rg='rg --no-ignore --hidden'
 alias oktap='aws-okta --mfa-provider okta --mfa-factor-type push exec aws_production_super --'
 alias oktas='aws-okta --mfa-provider okta --mfa-factor-type push exec aws_staging_super --'
+alias sokta='aws-okta --mfa-provider okta --mfa-factor-type push exec simplee_production_super --'
 alias mothers="aws-okta --mfa-provider okta --mfa-factor-type push exec aws_staging_super -- aws ssm start-session --target i-7c4db1f8"
 alias motherp="aws-okta --mfa-provider okta --mfa-factor-type push exec aws_production_super -- aws ssm start-session --target i-00733fd71ed94e28b"
 alias ssmsession="aws ssm start-session --target "
