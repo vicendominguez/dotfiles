@@ -1,6 +1,11 @@
 My personal dotfiles
 ====================
 
+## Dependencies
+```
+tmux curl fzf vim git ripgrep bat go brew starship zoxide
+```
+
 ## Installation
 
 ``` sh

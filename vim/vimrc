@@ -1,132 +1,35 @@
-set encoding=utf-8
-set nocompatible                  " Must come first because it changes other options.
-set background=dark
+" Plugins
+" external tool dependencies:
+"  - ripgrep
+"  - bat
+"	 - fzf
+" remember: :PlugInstall
+call plug#begin()
+Plug 'fatih/vim-go'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'fatih/molokai'
+Plug 'vim-airline/vim-airline'
+" FZF Vim Integration.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Nice splitting / joining.
+Plug 'AndrewRadev/splitjoin.vim'
+" NERD Commenter plugin.V
+Plug 'scrooloose/nerdcommenter'
+" NERD Tree
+Plug 'preservim/nerdtree'
+call plug#end()
 
-syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
+filetype plugin indent on
 
-runtime macros/matchit.vim        " Load the matchit plugin.
-
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
-
-set backspace=indent,eol,start    " Intuitive backspacing.
-
-set hidden                        " Handle multiple buffers better.
-
-set shortmess-=S               " Search occurrences in the vim status var, example: [2/3]
-
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
-
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
-
-set number                        " Show line numbers.
-set ruler                         " Show cursor position.
-
-set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
-" turn off search highlight"
-nnoremap <leader><space> :nohlsearch<CR>
-
-set wrap                          " Turn on line wrapping.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
-
-set title                         " Set the terminal's title
-set lazyredraw                    " redraw only when we need to."
-set showmatch                     " highlight matching [{()}]"
-
-if !has("gui_running")            " Don't set titleold
-set titleold=
-if &term == "xterm" && &t_ts == ""
-  let &t_ts = "\e]2;"
-endif
-if &t_ts != ""
-  set title titlestring=%t%m\ -\ VIM
-endif
-endif
-
-set visualbell                        " No beeping.
-
-set nobackup                          " Don't make a backup before overwriting a file.
-set nowritebackup                     " And again.
-set directory=$HOME/.vim-tmp/tmp      " Keep swap files in one location
-set backupdir=$HOME/.vim-tmp/_backup  " where to put backup files.
-
+set autowrite
+set number
 set tabstop=2                         " Global tab width.
 set shiftwidth=2                      " And again, related.
 set expandtab                         " Use spaces instead of tabs
 set laststatus=2                      " Show the status line all the time
-set listchars=tab:▸\ ,eol:¬
-"set list                             " Show invisible characters
-"set cursorline                       " Show cursor line.
-
-source ~/.vim/vimrc/neobundle.vim
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.scssc,*.sassc
-
-" set autoread                     " Update open files when changed externally
-
-" Or use vividchalk
-set t_Co=256
-colorscheme vividchalk
-highlight clear SignColumn
-
-" Only do this part when compiled with support for autocommands
-if has("autocmd")
-" Enable file type detection
-filetype on
-" Syntax of these languages is fussy over tabs Vs spaces
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-" Customisations based on house-style (arbitrary)
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-" Treat .rss files as XML
-autocmd BufNewFile,BufRead *.rss setfiletype xml
-" Remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufNewFile,BufRead *.json set ft=javascript
-autocmd BufNewFile,BufRead *.eco set ft=html
-endif
-
-let mapleader=","
-if exists(":Tabularize")
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
-" Improve CtrlP
-let ctrlp_filter_greps = "".
-    \ "egrep -iv '\\.(" .
-    \ "jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po" .
-    \ ")$' | " .
-    \ "egrep -v '^(\\./)?(" .
-    \ "deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/" .
-    \ ")'"
-let my_ctrlp_git_command = "" .
-    \ "cd %s && git ls-files | " .
-    \ ctrlp_filter_greps
-if has("unix")
-let my_ctrlp_user_command = "" .
-      \ "find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\.*/*' | " .
-      \ ctrlp_filter_greps
-endif
-let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
-
-map <leader>f :CtrlP .<cr>
-
-" Edit another file in the same directory as the current file
-" uses expression to extract path from current file's path
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :e %%
-map <leader>sp :sp %%
-map <leader>vsp :vsp %%
-
+set splitbelow                        " More natural split
+set splitright                        " More natural split
 
 " Aliases for some typos
 command WQ wq
@@ -134,166 +37,81 @@ command Wq wq
 command W w
 command Q q
 
-" disable arroy keys
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
+" Colors
+colorscheme molokai
 
-" Strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+" Auto formatting and importing
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+
+" Status line types/signatures
+let g:go_auto_type_info = 1
+set updatetime=100
+
+" Run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
 endfunction
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+" Map keys for most used commands.
+" Ex: `\b` for building, `\r` for running and `\t` for running test.
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c  <Plug>(go-coverage-toggle)
 
-" Use poweline fonts in airline
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ' ' " No >
-let g:airline_right_sep = ' ' " No <
-let g:airline_detect_modified = 1 " enable modified detection
-let g:airline_detect_paste = 1 " enable paste detection
-" airline-branch : fugitive.vim
-let g:airline#extensions#branch#enabled = 1
-" airline-hunks : vim-signify or vim-gitgutter
-let g:airline#extensions#hunks#enabled = 1
-" airline-tabline : Top buffer bar
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#tab_nr_type = 0
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#buffer_nr_format = '%s '
-let g:airline#extensions#tabline#fnamemod = ':p:.'
-let g:airline#extensions#tabline#fnamecollapse = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#tabline#tab_min_count = 0
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+" Returned types
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
 
-" Override some sections
-" let spc = ' '
-" let g:airline_section_a = airline#section#create_left(['mode', 'paste', 'iminsert'])
-" let g:airline_section_b = airline#section#create(['hunks', 'branch'])
-" let g:airline_section_c = airline#section#create(['%<', 'file', spc, 'readonly'])
-" let g:airline_section_gutter = airline#section#create(['%='])
-" let g:airline_section_x = '' " airline#section#create_right(['tagbar', 'filetype'])
-" let g:airline_section_y = '' " airline#section#create_right(['ffenc'])
-" let g:airline_section_z = airline#section#create(['%3p%%'.spc, 'linenr', ':%3c '])
-" let g:airline_section_warning = airline#section#create(['syntastic', 'eclim', 'whitespace'])
+" Automatic autocomplete after write .
+au filetype go inoremap <buffer> . .<C-x><C-o>
 
-" INSERT to NORMAL timeout
-set ttimeoutlen=50
+" NERD Commenter plugin.V
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
 
-" Don't autosave/load sessions
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
+" FZF + ripgrep
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-" vim-rspec mappings
-let g:rspec_command = "!bundle exec rspec {spec}"
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" Don't print bufferline bar
-let g:bufferline_echo = 0
-
-" Remove trailing newline
-"au BufWritePre * :set binary | set noeol
-"au BufWritePost * :set nobinary | set eol
-
-" SplitJoin plugin
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
-
-" Store notes on Documents by default
-" let g:notes_directories = ['~/Documents/Notes']
-
-" Append modeline after last line in buffer.
-" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
-" files.
-function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
-        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
-  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), l:modeline)
-endfunction
-nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
-
-" Create non-existent dirs on file save
-augroup vimrc-auto-mkdir
-  autocmd!
-  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
-  function! s:auto_mkdir(dir, force)
-    if !isdirectory(a:dir)
-          \   && (a:force
-          \       || input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$')
-      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
-    endif
-  endfunction
-augroup END
-
-" vim-markdown
-let g:vim_markdown_folding_disabled=1
-
-" reload vim config
-nnoremap <Leader>r :so $MYVIMRC<CR>
-
-" search enngine support with this order: rg + ag + ack 1.x
-if executable('ack')
-  let g:ack_default_options=" -H --nocolor --nogroup --column"
-endif
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-if executable('rg')
-  let g:ackprg = 'rg --glob=!git/* --no-ignore'
-endif
-
-" disable go autoinstall
-let g:go_disable_autoinstall = 1
-
-" enable undo history
-set undofile
-set undodir=~/.vim-tmp/undodir
-
-" Integration with vim-airline
-let g:airline#extensions#syntastic#enabled = 1
-
-" testing syntastic with eslint (TEST)
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_json_checkers = ['jsonlint']
-
-
-" NerdTree to Control+n
+" NerdTree settings
+" Toggle NerdTree with Ctrl+N
 map <C-n> :NERDTreeToggle<CR>
 
-" writing with sudo to avoud read permissions
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+" Open NerdTree automatically on startup.
+" Also focus the *previous* window, i.e. the main window!
+" autocmd vimenter * NERDTree | wincmd p
+
+" Show or hide hidden files.
+let NERDTreeShowHidden=1
+
+" But still ignore some normally not needed files.
+let g:NERDTreeIgnore=['\.git$[[dir]]', 'node_modules$[[dir]]', '\.nyc_output$[[dir]]']
+
+" Show the current file in NERDTree.
+map <leader>t :NERDTreeFind<cr>

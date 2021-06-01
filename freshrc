@@ -8,17 +8,16 @@ fresh freshshell/fresh bin/fresh --bin
 [ "FreeBSD" = "$(uname)" ] && fresh shell/alias-fbsd.sh
 
 # fzf
-[ "FreeBSD" = "$(uname)" ] && [ $(which fzf) ] && fresh shell/fzf_fbsd_bash_completions.sh
+[ $(which fzf) ] && fresh shell/fzf_fbsd_bash_completions.sh
 
 # Vim
 fresh vim/vimrc --file
-fresh vim/vim --file=~/.vim/
-fresh shell/vim.sh
 
-install_vim_bundle(){
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    echo "Remember: vim +NeoBundleInstall +qall"
+install_vim_plugins(){
+    [ "$(uname)" == "FreeBSD" ] && mkdir -p ~/.vim/autoload
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +PlugInstall +qall
 }
 
 install_brew(){
@@ -31,7 +30,7 @@ install_brew(){
 
 # fresh hook
 fresh_after_build(){
-  install_vim_bundle
+  install_vim_plugins
   install_brew
 }
 
