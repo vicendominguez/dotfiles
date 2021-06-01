@@ -15,7 +15,6 @@ Plug 'AndrewRadev/splitjoin.vim'                  " Nice splitting / joining.
 Plug 'scrooloose/nerdcommenter'                   " NERD Commenter plugin.V
 Plug 'preservim/nerdtree'                         " NERD Tree
 Plug 'ervandew/supertab'                          " Quick autocompletion with supertab
-Plug 'kien/ctrlp.vim'                             " Open anything
 call plug#end()
 
 filetype plugin indent on
@@ -87,7 +86,9 @@ let g:NERDCompactSexyComs = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
-" FZF + ripgrep
+" FZF 
+" Old ControlP behavior but with fzf
+map <C-p> :Files<CR>
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 " [[B]Commits] Customize the options used by 'git log':
