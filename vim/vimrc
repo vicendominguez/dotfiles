@@ -89,6 +89,8 @@ let g:NERDDefaultAlign = 'left'
 " FZF 
 " Old ControlP behavior but with fzf
 nnoremap <silent> <C-p> :Files<CR>
+" special case using leader key + f to search in the code with ripgrep
+nnoremap <silent> <Leader>f :Rg<CR>
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 " [[B]Commits] Customize the options used by 'git log':
