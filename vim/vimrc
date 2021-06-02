@@ -1,4 +1,4 @@
-" Plugins
+" Plugins  
 " external tool dependencies:
 "  - ripgrep
 "  - bat
@@ -77,6 +77,13 @@ let g:go_auto_type_info = 1
 
 " Automatic autocomplete after write .
 au filetype go inoremap <buffer> . .<C-x><C-o>
+
+" Airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " NERD Commenter plugin.V
 " Create default mappings
