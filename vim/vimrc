@@ -88,7 +88,7 @@ let g:NERDDefaultAlign = 'left'
 
 " FZF 
 " Old ControlP behavior but with fzf
-map <C-p> :Files<CR>
+nnoremap <silent> <C-p> :Files<CR>
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 " [[B]Commits] Customize the options used by 'git log':
