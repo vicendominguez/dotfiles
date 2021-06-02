@@ -3,14 +3,16 @@
 "  - ripgrep
 "  - bat
 "	 - fzf
+"	 - git-delta
 " remember: :PlugInstall
 call plug#begin()
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'                                " a lot of plugins and confs as a base
 Plug 'fatih/molokai'                               " Colorize
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'                     " StatusBar light as air XDD
 " FZF Vim Integration.
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf magic is a must
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'                         " We need fugitive to work with :Commits
 Plug 'AndrewRadev/splitjoin.vim'                  " Nice splitting / joining.
 Plug 'scrooloose/nerdcommenter'                   " NERD Commenter plugin.V
 Plug 'preservim/nerdtree'                         " NERD Tree
@@ -91,6 +93,10 @@ let g:NERDDefaultAlign = 'left'
 nnoremap <silent> <C-p> :Files<CR>
 " special case using leader key + f to search in the code with ripgrep
 nnoremap <silent> <Leader>f :Rg<CR>
+" special case using leader key + g to search in the commits with ripgrep
+nnoremap <silent> <Leader>g :Commits<CR>
+" special case using leader key + h to search in the last opens
+nnoremap <silent> <Leader>h :History<CR>
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 " [[B]Commits] Customize the options used by 'git log':

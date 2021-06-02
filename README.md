@@ -3,7 +3,7 @@ My personal dotfiles
 
 ## Dependencies
 ```
-tmux curl fzf vim git ripgrep bat go brew starship zoxide
+tmux curl fzf vim git ripgrep bat go brew starship zoxide git-delta
 ```
 
 ## Installation
