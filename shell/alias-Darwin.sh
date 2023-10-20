@@ -4,7 +4,6 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -lF'
 alias ls='ls -G'
-alias myweather='curl -4 http://wttr.in/'
 alias valencia='curl -4 http://wttr.in/Valencia,Spain'
 alias rg='rg --no-ignore --hidden'
 alias ssmsession="aws ssm start-session --target "
@@ -28,3 +27,18 @@ aws_sso () {
         aws sso login --profile $profile
 }
 alias docker='podman'
+ramdisk() {
+  if [ "$1" = "on" ]; then
+  echo creating a 100MB ramdisk:
+  size=$((2 * 1024 * 100))
+  device_name=$(hdiutil attach -nomount ram://${size} | awk '{print $1}')
+  diskutil eraseVolume HFS+ RAMDisk ${device_name}
+  echo created: /Volumes/RAMDisk
+  elif [ "$1" = "off" ]; then
+    echo "Bye RAMDisk... sure? (control+c abort - INTRO byebye)"
+    read
+    hdiutil detach /Volumes/RAMDisk
+  else
+    echo "Uso: ramdisk [on|off]"
+  fi
+}
