@@ -6,7 +6,8 @@ fresh freshshell/fresh bin/fresh --bin
 fresh shell/alias-$(uname).sh
 
 # fzf
-#[ $(which fzf) ] && fresh shell/fzf_fbsd_bash_completions.sh
+[ $(which fzf) ] && fresh shell/fzf_completions-$(uname).sh
+
 
 # Vim
 fresh vim/vimrc --file
