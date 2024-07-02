@@ -26,7 +26,6 @@ aws_sso () {
         fi
         aws sso login --profile $profile
 }
-alias docker='podman'
 ramdisk() {
   if [ "$1" = "on" ]; then
   echo creating a 100MB ramdisk:
