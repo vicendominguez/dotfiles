@@ -45,3 +45,8 @@ disabled = false
 
 [cmd_duration]
 format = "[$duration]($style) "
+
+[custom.flox]
+command = "flox envs --json |jq '.active[].pointer.name' | tr -d '\"' | tr '\n' ' '"  # Muestra los entornos activos en una sola línea
+when = "flox envs --active |grep -vq 'No active environments'"  # Solo se muestra si hay entornos activos
+format = "[$output](green) "
